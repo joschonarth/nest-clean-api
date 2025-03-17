@@ -15,11 +15,13 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
+    "05-nest-clean": "file:",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.5.0",
-    "05-nest-clean": "file:",
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },
