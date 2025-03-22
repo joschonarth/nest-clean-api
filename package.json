@@ -20,6 +20,7 @@
     "test:e2e": "vitest run --config ./vitest.config.e2e.mjs"
   },
   "dependencies": {
+    "05-nest-clean": "file:",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.1",
     "@nestjs/core": "^11.0.1",
@@ -28,8 +29,8 @@
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.5.0",
     "@types/bcrypt": "^5.0.2",
-    "05-nest-clean": "file:",
     "bcrypt": "^5.1.1",
+    "dayjs": "^1.11.13",
     "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
@@ -37,6 +38,7 @@
     "zod-validation-error": "^3.4.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
