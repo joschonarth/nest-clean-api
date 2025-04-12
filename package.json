@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "05-nest-clean": "file:",
+    "@aws-sdk/client-s3": "^3.787.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.1",
     "@nestjs/core": "^11.0.1",
