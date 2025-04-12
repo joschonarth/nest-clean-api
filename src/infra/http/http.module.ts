@@ -16,7 +16,7 @@ import { FetchQuestionAnswersController } from './controllers/fetch-question-ans
 import { ChooseQuestionBestAnswerController } from './controllers/choose-question-best-answer.controller'
 import { CommentOnQuestionController } from './controllers/comment-on-question.controller'
 import { DeleteQuestionCommentController } from './controllers/delete-question-comment'
-import { CommentOnAnswerController } from './controllers/comment-on-answers.controller'
+import { CommentOnAnswerController } from './controllers/comment-on-answer.controller'
 
 import { CreateQuestionUseCase } from '@/domain/forum/application/use-cases/create-question'
 import { FetchRecentQuestionsUseCase } from '@/domain/forum/application/use-cases/fetch-recent-questions'
