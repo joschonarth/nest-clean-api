@@ -57,7 +57,7 @@ describe('Comment on answer (E2E)', () => {
         content: 'New comment',
       })
 
-    expect(response.status).toBe(201)
+    expect(response.statusCode).toBe(201)
 
     const commentOnDatabase = await prisma.comment.findFirst({
       where: {

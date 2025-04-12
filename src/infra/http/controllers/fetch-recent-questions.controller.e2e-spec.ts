@@ -49,7 +49,7 @@ describe('Fetch recent questions (E2E)', () => {
       .set('Authorization', `Bearer ${accessToken}`)
       .send()
 
-    expect(response.status).toBe(200)
+    expect(response.statusCode).toBe(200)
     expect(response.body).toEqual({
       questions: expect.arrayContaining([
         expect.objectContaining({ title: 'Question 01' }),

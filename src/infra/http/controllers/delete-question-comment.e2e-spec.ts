@@ -56,7 +56,7 @@ describe('Delete question comment (E2E)', () => {
       .set('Authorization', `Bearer ${accessToken}`)
       .send()
 
-    expect(response.status).toBe(204)
+    expect(response.statusCode).toBe(204)
 
     const commentOnDatabase = await prisma.comment.findUnique({
       where: {

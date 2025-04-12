@@ -73,7 +73,7 @@ describe('Fetch answer comments (E2E)', () => {
       .set('Authorization', `Bearer ${accessToken}`)
       .send()
 
-    expect(response.status).toBe(200)
+    expect(response.statusCode).toBe(200)
     expect(response.body).toEqual({
       comments: expect.arrayContaining([
         expect.objectContaining({ content: 'Comment 01' }),
