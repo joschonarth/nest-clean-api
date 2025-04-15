@@ -21,7 +21,6 @@
     "test:e2e:watch": "vitest --config ./vitest.config.e2e.mjs"
   },
   "dependencies": {
-    "05-nest-clean": "file:",
     "@aws-sdk/client-s3": "^3.787.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.1",
@@ -31,6 +30,7 @@
     "@nestjs/platform-express": "^11.0.1",
     "@prisma/client": "^6.5.0",
     "@types/bcrypt": "^5.0.2",
+    "05-nest-clean": "file:",
     "bcrypt": "^5.1.1",
     "dayjs": "^1.11.13",
     "ioredis": "^5.6.1",
