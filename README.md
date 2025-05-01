@@ -1,6 +1,6 @@
-<h1 align="center"><img src="./test/e2e/sample-upload.png" width="30" /> Nest Clean API</h1>
+<h1 align="center"><img src="./test/e2e/sample-upload.png" width="30" /> NestJS com DDD e Clean Architecture</h1>
 
-<p align="center"><i>Uma <b>API RESTful</b> desenvolvida com arquitetura limpa, modular e escalável para gerenciamento de tópicos, posts e usuários em um fórum, garantindo interações ágeis e seguras entre os participantes.</i>
+<p align="center"><i>Uma <b>API RESTful</b> desenvolvida com <b>Domain-Driven Design (DDD)</b> e <b>Clean Architecture</b>, estruturada de forma limpa, modular e escalável para o gerenciamento de usuários, tópicos e posts em um fórum.</i>
   <br/><br/>
   <img src="https://img.shields.io/github/last-commit/joschonarth/nest-clean-api?style=for-the-badge&color=EA284C&labelColor=1C1E26" alt="last-commit">
   <img src="https://img.shields.io/github/languages/top/joschonarth/nest-clean-api?style=for-the-badge&color=EA284C&labelColor=1C1E26" alt="top-language">
@@ -21,7 +21,7 @@
   - [🪣 Criação do Bucket na Cloudflare R2](#-criação-do-bucket-na-cloudflare-r2)
   - [▶️ Execução](#️-execução)
 - [📌 Tabela de Endpoints](#-tabela-de-endpoints)
-- [🔗 Endpoints](#-endpoints)
+- [📡 Endpoints Detalhados](#-endpoints-detalhados)
 - [🧪 Testes](#-testes)
 - [🤝 Contribuições](#-contribuições)
 - [⭐ Apoie este Projeto](#-apoie-este-projeto)
@@ -41,22 +41,22 @@ O projeto também integra tecnologias modernas como **Prisma ORM**, **PostgreSQL
 - 🔧 **NestJS**: Framework para construir aplicações Node.js eficientes e escaláveis.
 - 🟦 **TypeScript**: Superset de JavaScript que adiciona tipagem estática.
 - 🗄️ **Prisma**: ORM moderno e robusto para banco de dados.
+- 🐘 **PostgreSQL**: Banco de dados relacional utilizado para armazenar informações.
+- 🔴 **Redis**: Sistema de cache em memória e armazenamento de dados temporários.
 - 🐳 **Docker**: Containerização da aplicação.
-- 🗃️ **PostgreSQL**: Banco de dados relacional utilizado para armazenar informações.
+- ☁️ **S3 da AWS via R2 da Cloudflare**: Armazenamento de arquivos na nuvem.
 - 🔒 **Bcrypt**: Biblioteca para hash de senhas de forma segura.
 - 📅 **DayJS**: Biblioteca para manipulação de datas e horas.
-- 🔴 **Redis**: Sistema de cache em memória e armazenamento de dados temporários.
+- 💎 **Zod**: Biblioteca para validação de dados.
 - 🔐 **Passport-JWT**: Middleware de autenticação baseado em JWT.
 - 🏗️ **Reflect-Metadata**: Biblioteca que adiciona suporte a metadados em TypeScript.
 - ⚡ **RxJS**: Biblioteca para programação reativa com observables.
-- 🧪 **Zod**: Biblioteca para validação de dados.
-- ☁️ **S3 da AWS via R2 da Cloudflare**: Armazenamento de arquivos na nuvem.
 - 🧩 **Faker**: Biblioteca para gerar dados falsos para testes.
 - 📦 **Multer**: Middleware para upload de arquivos.
-- ⚙️ **Dotenv**: Carrega variáveis de ambiente.
-- 🛠️ **ESLint**: Linter para garantir a qualidade do código.
 - 🧪 **Vitest**: Framework de testes para TypeScript e JavaScript.
 - 🕷️ **Supertest**: Framework de testes para APIs HTTP.
+- ⚙️ **Dotenv**: Carrega variáveis de ambiente.
+- 🛠️ **ESLint**: Linter para garantir a qualidade do código.
 
 ## ⚙️ Funcionalidades
 
@@ -77,19 +77,19 @@ O projeto também integra tecnologias modernas como **Prisma ORM**, **PostgreSQL
 - 🛡️ **Clean Architecture:** Separação clara de responsabilidades entre domínio, aplicação, infraestrutura e interface.
 - 🧱 **Entidades e Value Objects:** Modelagem orientada ao domínio com foco na integridade dos dados.
 - 📦 **Camada Core Compartilhada:** Reutilização de entidades e contratos genéricos entre domínios.
-- 🧩 **Repositórios como Contratos (Interfaces):** Isolamento entre lógica de domínio e persistência.
+- 📂 **Repositórios como Contratos (Interfaces):** Isolamento entre lógica de domínio e persistência.
 - 🧪 **Test-Driven Development (TDD):** Estrutura de testes com repositórios in-memory e fábricas de entidades.
-- 🧰 **Factory Pattern para Testes:** Criação facilitada de entidades e casos de uso em testes.
+- 🏭 **Factory Pattern para Testes:** Criação facilitada de entidades e casos de uso em testes.
 - 🔗 **Aggregate Root:** Entidades raiz que controlam a consistência dos agregados.
 - 📜 **Watched List:** Rastreio de alterações em coleções internas de entidades.
 - 🌐 **Domain Events:** Comunicação entre domínios desacoplada via eventos explícitos.
 - 📣 **Event Subscribers:** Reações automatizadas a eventos de domínio, como envio de notificações.
 - ↔️ **Either (Programação Funcional):** Encapsulamento explícito de erros e resultados esperados.
-- 🧪 **Isolation in Use Cases:** Casos de uso desacoplados de infraestrutura e testáveis isoladamente.
+- ⚙️ **Use Cases Desacoplados:** Casos de uso desacoplados de infraestrutura e testáveis isoladamente.
 - 💡 **Presenters:** Separação entre modelos de domínio e estruturas de resposta HTTP.
 - 🔐 **Autenticação Modular:** Implementações desacopladas de criptografia e autenticação.
-- 🧱 **Pipes Customizados (NestJS):** Validação e transformação de dados com lógica própria.
-- 🧠 **Mapper Pattern (Prisma):** Conversão entre modelos ORM e entidades de domínio.
+- 🛠️ **Pipes Customizados:** Validação e transformação de dados com lógica própria.
+- 🧠 **Mapper Pattern:** Conversão entre modelos ORM e entidades de domínio.
 
 ## 🏗️ Estrutura da Aplicação
 
@@ -275,27 +275,19 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 
 ### ▶️ Execução
 
-1. **Crie um arquivo `.env` a partir do exemplo:**
-
-    ```bash
-    cp .env.example .env
-    ```
-
-    Edite o arquivo `.env` para configurar as variáveis de ambiente necessárias.
-
-2. Inicie os bancos de dados **PostgreSQL** e **Redis**  utilizando o **Docker**:
+1. Inicie os bancos de dados **PostgreSQL** e **Redis**  utilizando o **Docker**:
 
    ```bash
    docker-compose up -d
    ```
 
-3. **Execute as migrações do banco de dados:**
+2. **Execute as migrações do banco de dados:**
 
    ```bash
    npx prisma migrate dev
    ```
 
-4. **Inicie a API:**
+3. **Inicie a API:**
 
    ```bash
    pnpm run start:dev
@@ -354,6 +346,8 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | GET    | `/notifications/:notificationId/read` | Marcar notificação como lida | `:notificationId` (ID da notificação) | -->
 
 ## 📌 Tabela de Endpoints
+
+---
 
 ### 🧑‍💼 Autenticação e Conta
 
@@ -415,9 +409,11 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | POST   | `/attachments`                        | Fazer upload de anexos             | –                                   |
 | GET    | `/notifications/:notificationId/read` | Marcar notificação como lida       | `:notificationId` (ID da notificação) |
 
-## 🔗 Endpoints
+---
 
-### 🧑 Criar Conta de Usuário
+## 📡 Endpoints Detalhados
+
+### 👤 Criar Conta de Usuário
 
 - **Método**: `POST`
 - **URL**: `/accounts`
