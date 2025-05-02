@@ -35,6 +35,8 @@ A arquitetura foi pensada para ser **escalável, segura e extensível**, incorpo
 
 O projeto também integra tecnologias modernas como **Prisma ORM**, **PostgreSQL**, **Redis** e armazenamento em nuvem via **S3/R2**, proporcionando alta eficiência no gerenciamento de dados e arquivos.
 
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 - 🟢 **Node.js**: Plataforma para execução do JavaScript no servidor.
@@ -58,6 +60,8 @@ O projeto também integra tecnologias modernas como **Prisma ORM**, **PostgreSQL
 - ⚙️ **Dotenv**: Carrega variáveis de ambiente.
 - 🛠️ **ESLint**: Linter para garantir a qualidade do código.
 
+---
+
 ## ⚙️ Funcionalidades
 
 - 🔐 **Autenticação segura de usuários:** Registro, login e proteção de rotas privadas com tokens JWT.
@@ -70,6 +74,8 @@ O projeto também integra tecnologias modernas como **Prisma ORM**, **PostgreSQL
 - ⚡ **Cache otimizado:** Uso de Redis para acelerar a recuperação de informações e reduzir a carga no banco de dados.
 - 🧪 **Testes automatizados:** Cobertura abrangente com testes unitários e de integração.
 - 🛠️ **Estrutura escalável:** Facilitada por princípios de Clean Architecture e SOLID para crescimento sustentável do sistema.
+
+---
 
 ## 📚 Conceitos Aplicados
 
@@ -90,6 +96,8 @@ O projeto também integra tecnologias modernas como **Prisma ORM**, **PostgreSQL
 - 🔐 **Autenticação Modular:** Implementações desacopladas de criptografia e autenticação.
 - 🛠️ **Pipes Customizados:** Validação e transformação de dados com lógica própria.
 - 🧠 **Mapper Pattern:** Conversão entre modelos ORM e entidades de domínio.
+
+---
 
 ## 🏗️ Estrutura da Aplicação
 
@@ -147,6 +155,8 @@ nest-clean-api/
 │   └── utils/                         # Funções auxiliares para os testes
 ```
 
+---
+
 ## 🚀 Como Executar o Projeto
 
 ### 📋 Pré-requisitos
@@ -155,8 +165,6 @@ nest-clean-api/
 - 📦 [pnpm](https://pnpm.io/)
 - 🐳 [Docker](https://www.docker.com/)
 - ☁️ Conta na [Cloudflare](https://www.cloudflare.com/developer-platform/products/r2/) (utilizada para o serviço de storage via R2)
-
----
 
 ### 🔧 Instalação
 
@@ -177,8 +185,6 @@ nest-clean-api/
     ```bash
     pnpm install
     ```
-
----
 
 ### 🌱 Configuração das Variáveis de Ambiente
 
@@ -253,8 +259,6 @@ rm private_key.pem public_key.pem
    - **AWS_BUCKET_NAME:** Bucket exclusivo para testes (ex: `nest-clean-api-test`)
    - **REDIS_DB=1:** Define o banco Redis alternativo para testes, evitando conflitos com o ambiente de dev.
 
----
-
 ### 🪣 Criação do Bucket na Cloudflare R2
 
 Para usar o serviço de armazenamento R2 da Cloudflare:
@@ -270,8 +274,6 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
    - **AWS_ACCESS_KEY_ID**
    - **AWS_SECRET_ACCESS_KEY**
 7. Adicione todas essas informações ao seu arquivo `.env`.
-
----
 
 ### ▶️ Execução
 
@@ -345,9 +347,9 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | POST   | `/attachments` | Fazer upload de anexos | – |
 | GET    | `/notifications/:notificationId/read` | Marcar notificação como lida | `:notificationId` (ID da notificação) | -->
 
-## 📌 Tabela de Endpoints
-
 ---
+
+## 📌 Tabela de Endpoints
 
 ### 🧑‍💼 Autenticação e Conta
 
@@ -356,7 +358,6 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | POST   | `/accounts`   | Criar uma nova conta de usuário  | –                           |
 | POST   | `/sessions`   | Autenticar usuário (login)       | –                           |
 
----
 
 ### ❓ Perguntas
 
@@ -368,8 +369,6 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | GET    | `/questions`               | Listar perguntas recentes          | –                                |
 | GET    | `/questions/:slug`         | Buscar pergunta por slug           | `:slug` (slug da pergunta)       |
 
----
-
 ### 💬 Comentários em Perguntas
 
 | Método | Rota                            | Descrição                   | Parâmetros            |
@@ -377,8 +376,6 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | POST   | `/questions/:questionId/comments` | Comentar em uma pergunta | `:questionId` (ID da pergunta)    |
 | GET    | `/questions/:questionId/comments` | Listar comentários de uma pergunta | `:questionId` (ID da pergunta) |
 | DELETE | `/questions/comments/:id`            | Deletar um comentário de pergunta  | `:id` (ID do comentário)          |
-
----
 
 ### 📝 Respostas
 
@@ -390,8 +387,6 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | GET    | `/questions/:questionId/answers`     | Listar respostas de uma pergunta          | `:questionId` (ID da pergunta)   |
 | PATCH  | `/answers/:answerId/choose-as-best`  | Escolher melhor resposta para pergunta    | `:answerId` (ID da resposta)     |
 
----
-
 ### 💬 Comentários em Respostas
 
 | Método | Rota                                 | Descrição                          | Parâmetros                        |
@@ -399,8 +394,6 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 | POST   | `/answers/:answerId/comments`        | Comentar em uma resposta           | `:answerId` (ID da resposta)      |
 | GET    | `/answers/:answerId/comments`        | Listar comentários de uma resposta | `:answerId` (ID da resposta)      |
 | DELETE | `/answers/comments/:id`              | Deletar um comentário de resposta  | `:id` (ID do comentário)          |
-
----
 
 ### 📎 Anexos e Notificações
 
@@ -616,6 +609,8 @@ Para usar o serviço de armazenamento R2 da Cloudflare:
 - **Parâmetros de Rota**:
   - `notificationId` (string): ID da notificação.
 
+---
+
 ## 🧪 Testes
 
 Este projeto inclui **testes unitários** e **testes E2E** (end-to-end) para garantir a confiabilidade e o funcionamento correto dos recursos implementados. Para executar os testes, utilize os seguintes comandos:
@@ -661,6 +656,8 @@ Este projeto inclui **testes unitários** e **testes E2E** (end-to-end) para gar
   ```bash
   npm run test:ui
   ```
+
+---
 
 ## 🤝 Contribuições
 
